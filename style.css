@@ -1,0 +1,225 @@
+:root {
+    --backgroundColor: rgb(0, 0, 3);
+    --textColor: white;
+
+    --emphasizeTime: 0.5s;
+    --typingTime: 2s;
+    --blinkTime: 800ms;
+    --headerTime: 4s;
+    --backgroundTime: 5s;
+    --introTime: 5s;
+}
+
+html {
+    max-width: 100%;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    font-family: 'Source Code Pro', monospace;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    position: relative;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+a {
+    height: min-content;
+    width: min-content;
+}
+
+.link {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.link:hover {
+    opacity: 1;
+    transform: scale(110%);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#greetingContainer {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation: toHeader 1s ease-out var(--headerTime) forwards;
+}
+
+#greeting {
+    max-width: 100%;
+    max-height: max-content;
+    min-height: fit-content;
+    position: absolute;
+    font-size: 7vmin;
+    margin-right: 4%;
+    animation: halfSize 1s ease-out var(--headerTime) forwards;
+    border: 10px red;
+}
+
+#greeting::before,
+#greeting::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#greeting::before {
+    animation: typing var(--typingTime) steps(22) 1s forwards;
+    background: var(--backgroundColor);
+}
+
+#greeting::after {
+    background: var(--textColor);
+    animation: typing var(--typingTime) steps(22) 1s forwards,
+               blink var(--blinkTime) step-start infinite;
+    width: 0.6em;
+    height: 0.25em;
+    top: 73%;
+}
+
+#introContainer {
+    height: 100vh;
+    opacity: 0%;
+    background-image: url(images/Digital\ Moonlight\ Cropped.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: fadeIn 2s ease-out var(--backgroundTime) forwards;
+}
+
+#introContainer::before {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to bottom, var(--backgroundColor), rgba(0, 0, 0, 0));
+    height: 4vmax;
+    width: 100%;
+    content: '';
+}
+
+#introduction {
+    display: flex;
+    height: 95vh;
+    font-size: 3vmin;
+    flex-direction: column;
+}
+
+#introductionDescription {
+    opacity: 0%;
+    text-align: center;
+    animation: fadeIn 0.1s linear var(--introTime) forwards;
+}
+
+.skills {
+    opacity: 0%;
+    text-align: center;
+    animation: fadeIn 0.1s linear var(--introTime) forwards;
+}
+
+.skill {
+    height: 10vmin;
+    width: 10vmin;
+}
+
+.projectHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectTitle {
+    text-align: center;
+    font-size: large;
+    margin: 0px;
+    padding-right: 10px;
+}
+
+.projectDetails {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.projectDescription {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+.technologies {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#presence {
+    padding-top: 20vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    column-gap: 2vw;
+}
+
+.repository {
+    height: 40px;
+    bottom: 0;
+}
+
+.technology {
+    height: 50px;
+    bottom: 0;
+}
+
+#projects::before {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(to top, var(--backgroundColor), rgba(0, 0, 0, 0));
+    height: 4vmax;
+    top: -4vmax;
+    width: 100%;
+    content: '';
+}
+
+iframe {
+    width: 100vw;
+    height: 70vh;
+    margin-bottom: 5vh;
+    border: 0;
+}
+
+@keyframes typing {
+    to {left: 100%;}
+}
+
+@keyframes blink {
+    50% {opacity: 0;}
+}
+
+@keyframes toHeader {
+    to {height: 5vh;}
+}
+
+@keyframes halfSize {
+    to {transform: scale(50%);
+        margin-right: 0%;}
+}
+
+@keyframes fadeIn {
+    to {opacity: 100%;}
+}
