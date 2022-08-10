@@ -1,11 +1,11 @@
 [submodule "Weather Fetcher"]
-    path = /Weather Fetcher
+    path = Weather Fetcher
     url = https://github.com/WarssayH/Weather-Fetcher
 
 [submodule "Snake"]
-    path = /Snake
+    path = Snake
     url = https://github.com/WarssayH/Snake
 
 [submodule "Tic-Tac-Toe"]
-    path = /Tic-Tac-Toe
+    path = Tic-Tac-Toe
     url = https://github.com/WarssayH/Tic-Tac-Toe
