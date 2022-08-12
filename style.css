@@ -112,6 +112,7 @@ body::-webkit-scrollbar {
 }
 
 #introduction {
+    position: relative;
     display: flex;
     height: 95vh;
     font-size: 3vmin;
@@ -169,11 +170,20 @@ body::-webkit-scrollbar {
 }
 
 #presence {
-    padding-top: 20vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 23vh;
+    bottom: 0px;
     column-gap: 2vw;
+}
+
+#presence > a > .link {
+    height: 11vmin;
+    width: 11vmin;
 }
 
 .repository {
@@ -222,4 +232,18 @@ iframe {
 
 @keyframes fadeIn {
     to {opacity: 100%;}
+}
+
+@media only screen and (max-aspect-ratio: 7 / 10) {
+    #presence > a > .link {
+        height: 15vmin;
+        width: 15vmin;
+    }
+}
+
+@media only screen and (max-aspect-ratio: 5 / 10) {
+    #presence > a > .link {
+        height: 20vmin;
+        width: 20vmin;
+    }
 }
