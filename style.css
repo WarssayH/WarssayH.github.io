@@ -26,6 +26,10 @@ body {
     padding: 0px;
 }
 
+p {
+    font-size: large;
+}
+
 a {
     height: min-content;
     width: min-content;
@@ -58,14 +62,13 @@ body::-webkit-scrollbar {
 }
 
 #greeting {
-    max-width: 100%;
-    max-height: max-content;
-    min-height: fit-content;
+    min-width: min-content;
+    max-width: max-content;
+    height: max-content;
     position: absolute;
     font-size: 7vmin;
     margin-right: 4%;
-    animation: halfSize 1s ease-out var(--headerTime) forwards;
-    border: 10px red;
+    animation: threeQuarterSize 1s ease-out var(--headerTime) forwards;
 }
 
 #greeting::before,
@@ -105,6 +108,7 @@ body::-webkit-scrollbar {
 #introContainer::before {
     display: block;
     position: relative;
+    margin-top: 0.5vw;
     background-image: linear-gradient(to bottom, var(--backgroundColor), rgba(0, 0, 0, 0));
     height: 4vmax;
     width: 100%;
@@ -122,6 +126,7 @@ body::-webkit-scrollbar {
 #introductionDescription {
     opacity: 0%;
     text-align: center;
+    font-size: 3vmin;
     animation: fadeIn 0.1s linear var(--introTime) forwards;
 }
 
@@ -145,7 +150,7 @@ body::-webkit-scrollbar {
 
 .projectTitle {
     text-align: center;
-    font-size: large;
+    font-size: larger;
     margin: 0px;
     padding-right: 10px;
 }
@@ -225,8 +230,8 @@ iframe {
     to {height: 5vh;}
 }
 
-@keyframes halfSize {
-    to {transform: scale(50%);
+@keyframes threeQuarterSize {
+    to {transform: scale(75%);
         margin-right: 0%;}
 }
 
@@ -239,11 +244,19 @@ iframe {
         height: 15vmin;
         width: 15vmin;
     }
+
+    #introductionDescription {
+        font-size: 4vmin;
+    }
 }
 
 @media only screen and (max-aspect-ratio: 5 / 10) {
     #presence > a > .link {
         height: 20vmin;
         width: 20vmin;
+    }
+
+    #introductionDescription {
+        font-size: 5vmin;
     }
 }
