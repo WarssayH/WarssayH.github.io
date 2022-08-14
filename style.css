@@ -36,13 +36,13 @@ a {
 }
 
 .link {
-    opacity: 0.6;
     transition: 0.5s;
+    opacity: 0.6;
 }
 
 .link:hover {
-    opacity: 1;
     transform: scale(110%);
+    opacity: 1;
 }
 
 body::-webkit-scrollbar {
@@ -139,6 +139,7 @@ body::-webkit-scrollbar {
 .skill {
     height: 10vmin;
     width: 10vmin;
+    opacity: 0.6;
 }
 
 .projectHeader {
@@ -155,23 +156,11 @@ body::-webkit-scrollbar {
     padding-right: 10px;
 }
 
-.projectDetails {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-}
-
 .projectDescription {
-    display: flex;
-    align-items: center;
     margin: 0px;
-}
-
-.technologies {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
-    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 #presence {
@@ -189,15 +178,11 @@ body::-webkit-scrollbar {
 #presence > a > .link {
     height: 11vmin;
     width: 11vmin;
+    opacity: 1;
 }
 
 .repository {
     height: 40px;
-    bottom: 0;
-}
-
-.technology {
-    height: 50px;
     bottom: 0;
 }
 
@@ -248,6 +233,10 @@ iframe {
     #introductionDescription {
         font-size: 4vmin;
     }
+
+    .technologies {
+        flex-flow: row wrap;
+    }
 }
 
 @media only screen and (max-aspect-ratio: 5 / 10) {
@@ -258,5 +247,15 @@ iframe {
 
     #introductionDescription {
         font-size: 5vmin;
+    }
+
+    .projectDescription {
+        font-size: 3vmin;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .projectDescription {
+        font-size: 3vmin;
     }
 }
